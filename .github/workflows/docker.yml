@@ -31,7 +31,7 @@ jobs:
         env:
           REF: ${{ github.ref }}
         run: |
-          sed -i "s/    'version' => 'canary',/    'version' => '${REF:11}',/" config/app.php
+          sed -i "s@    'version' => 'canary',@    'version' => '${REF:11}',@" config/app.php
       - name: Release Production Build
         uses: docker/build-push-action@v2
         if: "!contains(github.ref, 'develop')"
