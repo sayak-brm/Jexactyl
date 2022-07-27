@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - 'develop'
+      - 'release/v*'
     tags:
       - 'v*'
 jobs:
